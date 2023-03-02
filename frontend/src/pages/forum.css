@@ -1,0 +1,74 @@
+.forum {
+    background-color: rgba(19, 22, 22, 0.808);
+    color: white;
+    padding: 20px;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.forum-post {
+    background-color: rgba(0, 24, 102, 0.863);
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 1500px;
+}
+
+.forum-post h2 {
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.forumP {
+    font-size: 20px;
+    font-family: fantasy;
+}
+
+.forumFooter {
+    width: 100%;
+    color: white;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(14, 11, 11, 0.747);
+
+}
+
+.pFooter {
+    position: absolute;
+    margin-left: 670px;
+}
+
+#sidebar {
+    margin-top: 56px;
+    height: 89vh;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+
+.lotwqA {
+    margin-bottom: 50px;
+}
+
+.submenu {
+    display: block;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.submenu.open {
+    max-height: 500px;
+}
+
+
+.grey-bg {  
+    background-color: #F5F7FA;
+}
+
+

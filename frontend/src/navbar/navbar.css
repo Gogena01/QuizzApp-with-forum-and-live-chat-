@@ -1,0 +1,15 @@
+.Navbar {
+    background-color: aqua;
+}
+
+.card-img-top {
+    background-image: url("ilya-pavlov-OqtafYT5kTw-unsplash.jpg");
+}
+
+#okay {
+    background-color: rgb(44, 43, 43);
+}
+
+#basic-nav-dropdown {
+    color: white;
+}

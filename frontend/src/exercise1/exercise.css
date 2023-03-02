@@ -1,0 +1,84 @@
+h1 {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 20px;
+}
+
+.exercise {
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgba(19, 6, 6, 0.849);
+    padding: 50px  35px;
+    width: fit-content;
+    margin-left: 20px;
+
+}
+
+
+.exercise input {
+    width: 340px;
+}
+
+.button {
+    background-color: #022361;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+
+.divHint {
+    display: none;
+    border: 2px;
+    border-radius: 3%;
+    border-style: groove;
+    color: white;
+    background-color: rgba(24, 36, 148, 0.637);
+    font-size: large;
+    text-align:initial;
+    text-indent: 20%;
+    height: 80px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+
+.answer {
+    display: none;
+    background-color: rgba(16, 39, 168, 0.795);
+    width: 500px;
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 3%;
+    font-size: xx-large;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.next {
+    background-color: #022361;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+ 
+
+

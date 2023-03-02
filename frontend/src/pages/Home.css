@@ -1,0 +1,70 @@
+body {
+
+    background: rgb(182, 253, 45);
+    background: linear-gradient(0deg, rgba(182, 253, 45, 1) 0%, rgba(37, 128, 200, 1) 0%);
+}
+
+.HomeH1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.Hero {
+    background-image: url('./space-g5330b3116_1920.jpg');
+    height: 28cm;
+    border-top: none;
+    border-style: initial;
+    border-color: rgb(50, 0, 167);
+
+}
+
+.heroText {
+    background-color: rgba(12, 19, 109, 0.5);
+    margin: auto;
+    width: 60%;
+    padding: 80px;
+    position: absolute;
+    top: 18%;
+    left: 20%;
+    text-align: center;
+}
+
+.pHome {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2cm;
+    color: white;
+}
+
+.h5Home {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    color: white;
+    font-size: 1cm;
+}
+
+.homeFooter {
+    background-color: rgba(41, 40, 40, 0.89);
+    text-align: center;
+}
+
+.pFooter {
+    font-size: 0.5cm;
+    color: white;
+}
+
+#divC {
+    width: 8cm;
+    margin-top: 14cm;
+    margin-left: 9cm;
+    text-align: center;
+    justify-content: baseline;
+}
+
+
+.divP {
+    color: white;
+    position: initial;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
