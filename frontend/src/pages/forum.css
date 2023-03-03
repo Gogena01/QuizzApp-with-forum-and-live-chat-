@@ -67,8 +67,78 @@
 }
 
 
-.grey-bg {  
+.grey-bg {
     background-color: #F5F7FA;
 }
 
+#form {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    background-color: rgb(58, 56, 56);
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
 
+#form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#form input {
+    padding: 10px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    margin-bottom: 20px;
+    margin-right: 3px;
+}
+
+#form textarea {
+    margin-left: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#btnAddPost {
+    background-color: #041d04;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 0;
+}
+
+#btnAddPost:hover {
+    background-color: #1100ff;
+}
+
+
+.createPost {
+    background-color: rgb(2, 28, 53);
+    display: none;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.head3 {
+    margin-left: 4px;
+    background-color: white;
+}
+
+.btnAdd {
+    background-color: rgba(10, 59, 219, 0.863);
+    margin-bottom: 10px;
+    transition: all 1s;
+}
+
+.btnAdd:hover {
+    background-color: rgb(4, 4, 126);
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+}

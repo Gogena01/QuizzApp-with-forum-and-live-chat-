@@ -40,7 +40,7 @@ const NavMenu = () => {
               <Nav.Link href="/" style={{color:'white'}}>Home</Nav.Link>
               <Nav.Link style={{color:'white'}}>Link</Nav.Link>
               <Nav.Link style={{color:'white'}} href='/chat'>Chat</Nav.Link>
-              <NavDropdown style={{color:'white'}} title="Dropdown" id="basic-nav-dropdown"> 
+              <NavDropdown style={{color:'white'}} title="Community" id="basic-nav-dropdown"> 
                 <NavDropdown.Item  href="/forum">Forum</NavDropdown.Item>
                 <NavDropdown.Item  href="#action/3.2">
                   Another action
