@@ -40,7 +40,7 @@ const Home = () => {
             </header>
 
             <footer className='homeFooter' style={{ height: '50px' }}>
-                <p className='pFooter'>If you want to contact us:</p>
+                <p className='pFooter' >Hard work and dedication is my motto!</p>
             </footer>
         </body>
 
