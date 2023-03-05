@@ -38,17 +38,17 @@ class ParentComponent extends React.Component {
         return (
             <div style={{ display: 'flex' }}>
                 <ProSidebarProvider>
-                    <div style={{backgroundColor: ''}}>
-                    <Sidebar backgroundColor='#d2d8e6' className='sideB' rootStyles={{
-                        height: '1000px',
-                        fontSize: '23px',
-                        width: "5cm",
-                        border:'inherit',
-                    }}>
-                        <Menu>
-                            <BarSide handleLinkClick={this.handleSidebarLinkClick} />
-                        </Menu>
-                    </Sidebar>
+                    <div style={{ backgroundColor: '' }}>
+                        <Sidebar backgroundColor='#d2d8e6' className='sideB' rootStyles={{
+                            height: '1000px',
+                            fontSize: '23px',
+                            width: "5cm",
+                            border: 'inherit',
+                        }}>
+                            <Menu>
+                                <BarSide handleLinkClick={this.handleSidebarLinkClick} />
+                            </Menu>
+                        </Sidebar>
                     </div>
                 </ProSidebarProvider>
 
@@ -56,7 +56,7 @@ class ParentComponent extends React.Component {
 
                 <QuestionContent text={this.state.contentText} currentComponent={this.state.currentComponent} style={{ marginLeft: '15px' }} />
                 <AnotherComponent data={this.state.data} currentComponent={this.state.currentComponent} style={{ marginLeft: '10px' }} />
-                
+
 
 
 
@@ -81,7 +81,7 @@ class BarSide extends React.Component {
     render() {
         return (
             <div>
-                <SubMenu style={{color:'#416dd2', fontFamily:'100px'}} label='Javascript'>
+                <SubMenu style={{ color: '#416dd2', fontFamily: '100px' }} label='Javascript'>
                     <MenuItem id='menuItem'>
                         <NavLink onClick={this.handleClick} data-value='QuestionContent' >Exercising</NavLink>
                     </MenuItem>
@@ -100,8 +100,16 @@ class QuestionContent extends React.Component {
     render() {
         if (this.props.currentComponent === 'QuestionContent') {
             return (
-                <div>
-                    <h1 className='startText'>You can try practice some of your favourite programming languages!</h1>
+                <div className='divExercs'>
+                    <img src='holder.js/450px400' id='imgExercises' />
+                    <div id='innerDiv'>
+                        <p style={{marginTop:'200px', fontSize:'50px'}}>Start learning</p>
+                        <section class="animation" >
+                            <div class="first"><div>Javascript</div></div>
+                            <div class="second"><div>React.js</div></div>
+                            <div class="third"><div>Vue.js</div></div>
+                        </section>
+                    </div>
                 </div>
             );
         }
