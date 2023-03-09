@@ -5,11 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
 
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
 var exercise2 = require('./routes/Exercise2');
-var forumPosts = require('./routes/ForumPosts')
+var forumPosts = require('./routes/ForumPosts');
+var questLang = require('./routes/langQuestions')
 
 
 var app = express();
@@ -26,9 +26,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use('/quest', questLang)
 app.use('/forum', forumPosts)
 app.use('/Exercise2', exercise2)
-app.use('/exercise', indexRouter);
 app.use('/users', usersRouter);
 app.use('/exercises', testAPIRouter);
 

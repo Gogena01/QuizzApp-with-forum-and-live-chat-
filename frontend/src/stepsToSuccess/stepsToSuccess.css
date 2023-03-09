@@ -1,0 +1,19 @@
+.findLang {
+    background-color: rgb(108, 108, 202);
+    margin: auto;
+    padding: 20px;
+    margin-left: 200px;
+    display:list-item
+}
+
+.lab {
+    color: rgb(0, 0, 0);
+    display: -webkit-inline-box;
+    font-size: 24px;
+}
+
+.dataD {
+    background-color: rgba(20, 20, 240, 0.466);
+    padding: 10px;
+    font-weight: 600;
+}

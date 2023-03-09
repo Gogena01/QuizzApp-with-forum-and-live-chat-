@@ -11,11 +11,12 @@ import {
 } from 'cdbreact';
 
 import { AiOutlineArrowDown } from 'react-icons/fa';
-import { BiArrowToBottom, BiBook} from 'react-icons/bi';
+import { BiArrowToBottom, BiBook, BiDiamond } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import ForumTemplate from './forum';
 import Main from './forum';
 import HomeTemplate from './lessonsHome';
+import Quiz from '../stepsToSuccess/stepsToSuccess';
 
 
 class Sidebar extends Component {
@@ -50,7 +51,7 @@ class Sidebar extends Component {
 
     render() {
         return (
-            <div style={{ height: '850px', display: 'flex' }}>
+            <div style={{ height: '980px', display: 'flex' }}>
                 <CDBSidebar style={{
                     height: '1000px',
                     fontSize: '15px',
@@ -64,7 +65,7 @@ class Sidebar extends Component {
                                 icon="th-large"
                                 onClick={this.toggleSubmenu}
                             >
-                                Lessons <BiArrowToBottom/>
+                                Lessons <BiArrowToBottom />
                             </CDBSidebarMenuItem>
                             <CDBSidebarSubmenu
                                 className={`submenu ${this.state.isSubmenuOpen ? 'open' : ''}`}
@@ -87,7 +88,7 @@ class Sidebar extends Component {
                             className="sidebar-btn-wrapper"
                             style={{ padding: '20px 5px' }}
                         >
-                           Learn new knowledge
+                            Learn new knowledge
                         </div>
                     </CDBSidebarFooter>
                 </CDBSidebar>
@@ -112,10 +113,10 @@ class BarSide extends React.Component {
         return (
             <div>
                 <CDBSidebarMenuItem  >
-                    <Link onClick={this.handleClick} data-value='Forum'><BiBook/> Forum</Link>
+                    <Link onClick={this.handleClick} data-value='Forum'><BiBook /> Forum</Link>
                 </CDBSidebarMenuItem>
                 <CDBSidebarMenuItem >
-                    <Link onClick={this.handleClick} data-value='AnotherComponent'>Bye bye</Link>
+                    <Link onClick={this.handleClick} data-value='AnotherComponent'><BiDiamond />Ideas</Link>
                 </CDBSidebarMenuItem>
             </div>
         );
@@ -128,7 +129,7 @@ class QuestionContent extends React.Component {
         if (this.props.currentComponent === 'QuestionContent') {
             return (
                 <div>
-                    <HomeTemplate/>
+                    <HomeTemplate />
                 </div>
             );
         }
@@ -142,7 +143,7 @@ class AnotherComponent extends React.Component {
         if (this.props.currentComponent == 'AnotherComponent') {
             return (
                 <div>
-                    Hello
+                    <Quiz />
                 </div>
 
 
@@ -164,7 +165,7 @@ class Forum extends React.Component {
 
                     <div>
                         <h1>This is the place where you can improve your knowledge about programming</h1>
-                        <br/>
+                        <br />
                         <ForumTemplate />
                     </div>
                 </>
