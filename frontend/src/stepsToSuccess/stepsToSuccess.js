@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './stepsToSuccess.css'
 
 const Quiz = () => {
+    let score = 0;
+    let final = 0;
     const [name, setName] = useState('');
-    const [age, setAge] = useState('');
+    const [age, setAge] = useState(0);
     const [data, setData] = useState('');
     const [questionOne, setQuestionOne] = useState('');
     const [questionTwo, setQuestionTwo] = useState('');
@@ -12,9 +14,7 @@ const Quiz = () => {
     const [questionFive, setQuestionFive] = useState('');
     const [result, setResult] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        let score = 0;
+    const calculate = () => {
         if (questionOne === 'a') {
             score += 1;
         }
@@ -30,6 +30,10 @@ const Quiz = () => {
         if (questionFive === 'c') {
             score += 1;
         }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
         if (score === 0) {
             setResult(`Sorry based on your responses, it seems like you may not be a good fit for any programming language.`);
         } else if (score <= 2) {
@@ -57,6 +61,9 @@ const Quiz = () => {
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error(error))
+            calculate();
+        final += score
+        console.log(final)
     }
 
     return (
