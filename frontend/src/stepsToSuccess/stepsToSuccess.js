@@ -165,6 +165,52 @@ const Quiz = () => {
                         </>
                     )
                 }
+                {
+                    data.id === 3 && (
+                        <>
+
+                            <p style={{ fontSize: "30px", fontWeight: "700" }}>
+                                {data && data.question}
+                            </p>
+                            <label className="lab">
+                                a) {data && data.answers[0]}
+                                <input
+                                    type="radio"
+                                    name="question-two"
+                                    value="a"
+                                    onChange={(e) => setQuestionThree(e.target.value)}
+                                />
+                            </label>
+                            <label className="lab">
+                                b) {data && data.answers[1]}
+                                <input
+                                    type="radio"
+                                    name="question-one"
+                                    value="b"
+                                    onChange={(e) => setQuestionThree(e.target.value)}
+                                />
+                            </label><label className="lab">
+                                c) {data && data.answers[2]}
+                                <input
+                                    type="radio"
+                                    name="question-one"
+                                    value="c"
+                                    onChange={(e) => setQuestionThree(e.target.value)}
+                                />
+                            </label>
+                            <label className="lab">
+                                d) {data && data.answers[3]}
+                                <input
+                                    type="radio"
+                                    name="question-one"
+                                    value="d"
+                                    onChange={(e) => setQuestionThree(e.target.value)}
+                                />
+                            </label>
+
+                        </>
+                    )
+                }
                 <hr></hr>
                 <button type='submit'>Find out</button>
             </form>

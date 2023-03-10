@@ -73,13 +73,6 @@ class Sidebar extends Component {
 
                                 <BarSide handleLinkClick={this.handleSidebarLinkClick} />
                             </CDBSidebarSubmenu>
-                            <CDBSidebarMenuItem icon="sticky-note">Components</CDBSidebarMenuItem>
-                            <CDBSidebarMenuItem
-                                icon="credit-card"
-                                iconType="solid"
-                            >
-                                Metrics
-                            </CDBSidebarMenuItem>
                         </CDBSidebarMenu>
                     </CDBSidebarContent>
 
