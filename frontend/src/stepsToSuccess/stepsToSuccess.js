@@ -4,8 +4,6 @@ import './stepsToSuccess.css'
 const Quiz = () => {
     let score = 0;
     let final = 0;
-    const [name, setName] = useState('');
-    const [age, setAge] = useState(0);
     const [data, setData] = useState('');
     const [questionOne, setQuestionOne] = useState('');
     const [questionTwo, setQuestionTwo] = useState('');
@@ -70,6 +68,7 @@ const Quiz = () => {
         <div className='findLang'>
             <form onSubmit={handleSubmit}>
                 <h1>Which programming language would suit you the best?</h1>
+                <hr></hr>
                 {data.id === 1 && (
                     <>
 
