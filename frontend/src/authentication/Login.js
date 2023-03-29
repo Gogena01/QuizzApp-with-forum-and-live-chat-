@@ -27,35 +27,46 @@ const Login = () => {
     }
 
     return (
-        <section>
-            <p ref={errRef} className={errMsg ? "errMsg" :
-                "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}> 
-                <label htmlFor="username">Username:</label>
-                <input
-                    type='text'
-                    id='username'
-                    ref={userRef}
-                    autoComplete='off'
-                    onChange={(event) => setUser(event.target.value)}
-                    value={user}
-                    required
-                />
-                <label htmlFor="password">Password:</label>
-                <input
-                    type='password'
-                    id='password'
-                    onChange={(event) => setPwd(event.target.value)}
-                    value={pwd}
-                    required
-                />
+        <>
+            {success ? (<section>
+                <h1>You are logged in</h1>
+                <br />
+                <p>
+                    <a href='/home'>
+                        <button>Home</button>
+                    </a>
+                </p>
+            </section>) : (<section>
+                <p ref={errRef} className={errMsg ? "errMsg" :
+                    "offscreen"} aria-live="assertive">{errMsg}</p>
+                <h1>Sign In</h1>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="username">Username:</label>
+                    <input
+                        type='text'
+                        id='username'
+                        ref={userRef}
+                        autoComplete='off'
+                        onChange={(event) => setUser(event.target.value)}
+                        value={user}
+                        required
+                    />
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        type='password'
+                        id='password'
+                        onChange={(event) => setPwd(event.target.value)}
+                        value={pwd}
+                        required
+                    />
 
-                <button>Sign in</button>
-            </form>
+                    <button>Sign in</button>
+                </form>
 
 
-        </section>
+            </section>
+            )}
+        </>
     )
 }
 
