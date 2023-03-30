@@ -1,74 +1,79 @@
-import { useState, useEffect, useRef } from 'react';
+import {
+    signInWithGoogle,
+    signInWithEmailAndPassword,
+} from "./base.js";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
+import React, { useState } from "react";
+
+import "../App.css";
 
 const Login = () => {
-    const userRef = useRef();
-    const errRef = useRef();
 
-    const [user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
-
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
-
-    useEffect(() => {
-        setErrMsg('')
-    }, [user, pwd])
-
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log(user, pwd);
-        setUser('');
-        setPwd('');
-        setSuccess(true);
-    }
-
+    const [loginEmail, setLoginEmail] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
     return (
         <>
-            {success ? (<section>
-                <h1>You are logged in</h1>
-                <br />
-                <p>
-                    <a href='/home'>
-                        <button>Home</button>
-                    </a>
-                </p>
-            </section>) : (<section>
-                <p ref={errRef} className={errMsg ? "errMsg" :
-                    "offscreen"} aria-live="assertive">{errMsg}</p>
-                <h1>Sign In</h1>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        type='text'
-                        id='username'
-                        ref={userRef}
-                        autoComplete='off'
-                        onChange={(event) => setUser(event.target.value)}
-                        value={user}
-                        required
-                    />
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type='password'
-                        id='password'
-                        onChange={(event) => setPwd(event.target.value)}
-                        value={pwd}
-                        required
-                    />
+            <div className="col col-2"></div>
+            <div className="col col-8">
+                <div className="row">
+                    <div className="col col-6">
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>User Login</Card.Title>
+                                <div>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label>Email address</Form.Label>
+                                        <Form.Control
+                                            type="email"
+                                            placeholder="Enter email"
+                                            value={loginEmail}
+                                            onChange={(e) => setLoginEmail(e.target.value)}
+                                        />
+                                        <Form.Text className="text-muted">
+                                            We'll never share your email with anyone else.
+                                        </Form.Text>
+                                    </Form.Group>
 
-                    <button>Sign in</button>
-                </form>
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Password</Form.Label>
+                                        <Form.Control
+                                            type="password"
+                                            placeholder="Password"
+                                            value={loginPassword}
+                                            onChange={(e) => setLoginPassword(e.target.value)}
+                                        />
+                                    </Form.Group>
+                                    <hr style={{ margin: "5%" }} />
 
-
-            </section>
-            )}
+                                    <div className="d-grid gap-2">
+                                        <Button
+                                            variant="outline-success"
+                                            type="submit"
+                                            onClick={() => {
+                                                signInWithEmailAndPassword(loginEmail, loginPassword);
+                                            }}
+                                        >
+                                            Login
+                                        </Button>
+                                        <Button
+                                            variant="outline-primary"
+                                            onClick={signInWithGoogle}
+                                        >
+                                            <i className="fab fa-google"></i>Sign-in with Goolge
+                                        </Button>
+                                    </div>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div className="col-col-2"></div>
+                </div>
+            </div>
         </>
-    )
-}
+    );
+};
 
-
-export default Login
+export default Login;
