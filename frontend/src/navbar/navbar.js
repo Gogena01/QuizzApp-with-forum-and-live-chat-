@@ -6,7 +6,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 //import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 //import Tooltip from 'react-bootstrap/Tooltip';
 import { Outlet } from "react-router-dom";
-import './navbar.css'
+import './navbar.css';
+import firebase from 'firebase/compat/app';
 //import Button from 'react-bootstrap/esm/Button';
 
 
@@ -17,6 +18,7 @@ import './navbar.css'
 
 
 const NavMenu = () => {
+  const currUser = firebase.auth().currentUser;
 
   /*return (
     <div>
@@ -28,29 +30,41 @@ const NavMenu = () => {
     </div>
   );*/
 
+
+
+
   return (
     <>
+
       <Navbar id='okay' expand="lg">
         <Container>
-            <Navbar.Brand style={{color:'white'}}>My React Website</Navbar.Brand>
-          
+          <Navbar.Brand style={{ color: 'white' }}>My React Website</Navbar.Brand>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/" style={{color:'white'}}>Home</Nav.Link>
-              <Nav.Link style={{color:'white'}}>Link</Nav.Link>
-              <Nav.Link style={{color:'white'}} href='/chat'>Chat</Nav.Link>
-              <NavDropdown style={{color:'white'}} title="Community" id="basic-nav-dropdown"> 
-                <NavDropdown.Item  href="/forum">Forum</NavDropdown.Item>
-                <NavDropdown.Item  href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item   href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item  href="/exercise">
-                  Exercise
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
+              <Nav.Link href='/about' style={{ color: 'white' }}>About</Nav.Link>
+              {currUser !== null ? (
+                <><Nav.Link style={{ color: 'white' }} href='/chat'>Chat</Nav.Link>
+                  <NavDropdown style={{ color: 'white' }} title="Community" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/forum">Forum</NavDropdown.Item>
+                    <NavDropdown.Item href="/toDo">
+                      To Do list
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="/exercise">
+                      Exercise
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </>) : (
+                <>
+                  <Nav.Link style={{color:'white'}} href='/login'>Login</Nav.Link>
+                  <Nav.Link style={{color:'white'}} href='/register'>Register</Nav.Link>
+                </>
+              )
+              }
+
             </Nav>
           </Navbar.Collapse>
         </Container>

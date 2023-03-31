@@ -1,15 +1,14 @@
 import {
-    signInWithGoogle,
-    signInWithEmailAndPassword,
     registerWithEmailAndPassword
 } from "./base.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
+
 import React, { useState } from "react";
 
-import "../App.css";
+import "./login.css";
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -19,8 +18,8 @@ const Register = () => {
     return (
 
         <div className="col col-6">
-            <Card>
-                <Card.Body>
+            <Card id="loginCard">
+                <Card.Body id="loginCardBody">
                     <Card.Title>User Registration</Card.Title>
                     <Card.Text>First time visiting? register Here</Card.Text>
                     <div>

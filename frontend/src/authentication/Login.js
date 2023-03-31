@@ -8,10 +8,9 @@ import Card from "react-bootstrap/Card";
 
 import React, { useState } from "react";
 
-import "../App.css";
+import "./login.css";
 
 const Login = () => {
-
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
     return (
@@ -20,9 +19,9 @@ const Login = () => {
             <div className="col col-8">
                 <div className="row">
                     <div className="col col-6">
-                        <Card>
-                            <Card.Body>
-                                <Card.Title>User Login</Card.Title>
+                        <Card id="loginCard">
+                            <Card.Body id="loginCardBody">
+                                <Card.Title>Sing in</Card.Title>
                                 <div>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Email address</Form.Label>
@@ -59,6 +58,7 @@ const Login = () => {
                                             Login
                                         </Button>
                                         <Button
+                                            id="loginBtn"
                                             variant="outline-primary"
                                             onClick={signInWithGoogle}
                                         >
