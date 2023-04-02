@@ -10,6 +10,7 @@
 
 ## Back-End
 * **Express.js is used as the server-side framework for handling API requests and database interactions. It provides a simple and flexible way to handle routing, middleware, and other server-side functionalities.Sequelize is used as an ORM (Object-Relational Mapping) tool to provide a simple and efficient way to interact with the MySQL database. It enables easy creation and management of database models, as well as handling of database migrations.**
+* **Authentication is made with React Context and Firebase's features, it also provides Google sign in method, this way you can easily sign up in the website.
 ### Databases
 * **MySQL is used as the relational database management system to store and manage data related to user accounts, quiz questions and answers, and forum discussions.**
 * **Firebase is used as a backend service for real-time data synchronization and storage. It provides an easy way to manage user authentication and authorization, as well as a range of tools for data storage, messaging, and analytics.**
