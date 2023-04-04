@@ -64,6 +64,10 @@ const Login = () => {
                                         >
                                             <i className="fab fa-google"></i>Sign-in with Goolge
                                         </Button>
+                                        
+                                        <a style={{
+                                            fontSize:'14px',
+                                        }} href="/register">You don't have account?Click here</a>
                                     </div>
                                 </div>
                             </Card.Body>

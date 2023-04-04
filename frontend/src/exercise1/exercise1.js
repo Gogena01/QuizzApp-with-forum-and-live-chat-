@@ -1,7 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { Component} from 'react';
+import { Navigate } from 'react-router-dom';
 import './exercise.css';
 import Button from 'react-bootstrap/esm/Button';
-var isTrue = false;
+import firebase from 'firebase/compat/app';
 //const button = document.createElement('button');
 //button.remove();
 
@@ -52,7 +53,7 @@ class Exercise1 extends Component {
 
 
     hint = () => {
-        if (document.querySelector('.divHint').style.display == 'none') {
+        if (document.querySelector('.divHint').style.display === 'none') {
             document.querySelector('.divHint').style.display = 'block';
         } else {
             document.querySelector('.divHint').style.display = 'none';
@@ -69,8 +70,8 @@ class Exercise1 extends Component {
 
                 console.log(document.querySelectorAll('input')[0].value, document.querySelectorAll('input')[1].value)
 
-                if (document.querySelector('.answer').style.display == 'none') {
-                    if (this.state.apiResponse.answer[index0].trim().toUpperCase() == document.querySelectorAll('input')[0].value.toUpperCase().trim() && this.state.apiResponse.answer[index1].trim().toUpperCase() == document.querySelectorAll('input')[1].value.toUpperCase().trim()) {
+                if (document.querySelector('.answer').style.display === 'none') {
+                    if (this.state.apiResponse.answer[index0].trim().toUpperCase() === document.querySelectorAll('input')[0].value.toUpperCase().trim() && this.state.apiResponse.answer[index1].trim().toUpperCase() === document.querySelectorAll('input')[1].value.toUpperCase().trim()) {
                         document.getElementById('answerH2').textContent = 'That\'s true';
                         document.querySelector('.answer').style.display = 'block';
                         this.state.isNext = true;
@@ -83,8 +84,8 @@ class Exercise1 extends Component {
                 }
 
             } else {
-                if (document.querySelector('.answer').style.display == 'none') {
-                    if (this.state.apiResponse.answer[index].trim().toUpperCase() == document.querySelector('input').value.toUpperCase().trim()) {
+                if (document.querySelector('.answer').style.display === 'none') {
+                    if (this.state.apiResponse.answer[index].trim().toUpperCase() === document.querySelector('input').value.toUpperCase().trim()) {
                         document.querySelector('.answer').style.display = 'block';
                         document.getElementById('answerH2').textContent = 'That\'s true'
                         document.querySelector('.answer').className = 'answer true'
@@ -114,7 +115,7 @@ class Exercise1 extends Component {
                 button.remove();
             }*/
 
-            if (this.state.isNext == true) {
+            if (this.state.isNext === true) {
                 document.querySelector('.next').addEventListener('click',() => {
                     this.handleNextButtonClick();
                     this.state.isNext = false;
@@ -134,11 +135,18 @@ class Exercise1 extends Component {
 
 
 
-
     render() {
-        return (
+        const currUser = firebase.auth().currentUser;
+        console.log(currUser.length)
+        
+        if (!currUser) {
+            return <Navigate to='/login' />;
+        }
+        
 
-            <div className='main' >
+        
+        return (
+            <div className='main'>
                 <h1>Fill the blanks with the right answer</h1>
                 <div className='exercise'>
                     <h2>{this.state.apiResponse.description ? this.state.apiResponse.description : null }</h2>
@@ -147,21 +155,18 @@ class Exercise1 extends Component {
                     <Button onClick={this.hint} style={{ width: '120px' }}>Hint</Button>
                     <div className="divHint">
                         <p style={{ fontSize: '20px', position: 'center' }}>{this.state.apiResponse.hint}</p>
-
                     </div>
                 </div>
                 <div className='answer'>
                     <p id='answerH2'></p>
                 </div>
-
                 <br />
-
                 <Button className='button' onClick={this.answer}>Submit Answer</Button>
                 <Button className='next' style={{ marginLeft: '50px', marginRight: '30px' }}>Next Question</Button>
             </div>
-        )
-
+        );
     }
+    
 
 
 

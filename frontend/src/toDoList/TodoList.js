@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
-import uuid from "uuid";
+import {v4 as uuid} from 'uuid'
 import "./TodoList.css";
+import firebase from "firebase/compat/app";
+import { Navigate } from "react-router-dom";
 
 function TodoList() {
+  const currentUser = firebase.auth().currentUser;
   const [todos, setTodos] = useState([
     { id: uuid(), task: "task 1", completed: false },
     { id: uuid(), task: "task 2", completed: true }
@@ -48,6 +51,10 @@ function TodoList() {
       todo={todo}
     />
   ));
+
+  if(!currentUser) {
+    return <Navigate to='/login'/>
+  }
 
   return (
     <div className="TodoList">
