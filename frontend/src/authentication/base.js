@@ -1,12 +1,12 @@
 import firebase from "firebase/compat/app";
 import { getFirestore, collection, addDoc, where, query, getDocs} from "firebase/firestore"
 import "firebase/compat/auth";
-import { redirect } from "react-router-dom";
 
 const db = getFirestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
+
 
 export const auth = firebase.auth();
 export default firebase;
@@ -25,6 +25,8 @@ export const signInWithGoogle = async () => {
         email: user.email,
       });
     }
+
+    window.location = '/'
   } catch (err) {
     alert(err.message);
   }
@@ -32,8 +34,8 @@ export const signInWithGoogle = async () => {
 
 export const signInWithEmailAndPassword = async (email, password) => {
   try {
-    await auth.signInWithEmailAndPassword(email, password);
-    redirect('/')
+    await firebase.auth().signInWithEmailAndPassword(email, password);
+    window.location = '/';
   } catch (err) {
     alert(err.message);
   }
