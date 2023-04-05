@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -18,7 +18,23 @@ import firebase from 'firebase/compat/app';
 
 
 const NavMenu = () => {
-  const currUser = firebase.auth().currentUser;
+  const [currUser, setCurrUser] = useState(null);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(user => {
+      setCurrUser(user);
+    });
+  }, []);
+
+
+  const handleLogout = async () => {
+    try {
+      await firebase.auth().signOut();
+      window.location = '/login'
+    } catch (error) {
+      alert(error)
+    }
+  };
 
   /*return (
     <div>
@@ -45,7 +61,7 @@ const NavMenu = () => {
             <Nav className="me-auto">
               <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
               <Nav.Link href='/about' style={{ color: 'white' }}>About</Nav.Link>
-              {currUser !== null ? (
+              {currUser ? (
                 <><Nav.Link style={{ color: 'white' }} href='/chat'>Chat</Nav.Link>
                   <NavDropdown style={{ color: 'white' }} title="Community" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/forum">Forum</NavDropdown.Item>
@@ -57,6 +73,7 @@ const NavMenu = () => {
                       Exercise
                     </NavDropdown.Item>
                   </NavDropdown>
+                  <Nav.Link style={{color:'white'}} onClick={handleLogout}>Logout</Nav.Link>
                 </>) : (
                 <>
                   <Nav.Link style={{color:'white'}} href='/login'>Login</Nav.Link>
