@@ -3,7 +3,7 @@
 ![изтеглен файл](https://user-images.githubusercontent.com/107917621/224251143-d6a1ab09-e7a2-4696-8426-e5ceeac92114.png)
 
 ## Idea
-* **My Quiz app is a web-based platform that allows users to take quizzes on different programming languages, so they can train their knowledge and engage in discussion through a forum and live chat features. The app is built using several popular web development technologies including React.js, Express.js, Bootstrap, MySQL, Firebase, and Sequelize.Here you can find out which programming language would fit you.**
+* **My Quiz app is a web-based platform that allows users to take quizzes on different programming languages, so they can train their knowledge and engage in discussion through a forum and live chat features. The app is built using several popular web development technologies including React.js, Express.js, Bootstrap, MySQL, Firebase, and Sequelize.Here you can find out which programming language would fit you.Following the good practices for react app.**
 
 ## Front-End and design
 * **React.js is used as the front-end framework to build the user interface and ensure smooth and responsive interactions between the app and users. The use of React.js also enables easy componentization and management of the different sections of the app.Bootstrap is used as the CSS framework to style the app and ensure it is responsive across different devices and screen sizes.Using almost every essential function that React.js framework gives you for clean code and easier solution to your poblem.**
